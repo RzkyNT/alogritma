@@ -72,8 +72,10 @@ int main(void) {
     //Algorithm
     scanf("%d",&x);
     if (x%2==0) {
-        printf("bilangan genap"); 
-        }
+        printf("even number"); 
+        } else {
+            printf("odd number");
+    }
 
 }
 

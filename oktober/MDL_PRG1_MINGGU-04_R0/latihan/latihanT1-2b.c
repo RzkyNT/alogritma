@@ -78,10 +78,10 @@ int main(void) {
     char nama_karyawan[100];
 
     //Algorithm
-    scanf(" %99[^\n]", nama_karyawan);
+    scanf("%s", nama_karyawan);
     scanf("%f", &gaji_pokok);
     tunjangan = gaji_pokok * 20/100;
-    pajak = gaji_pokok * 15/100;
+    pajak = gaji_pokok * 15/100 + tunjangan;
     gaji_bersih = gaji_pokok + tunjangan - pajak;
     printf("Nama karyawan : %s\nGaji Bersih : Rp %.2f", nama_karyawan, gaji_bersih);
 

@@ -60,7 +60,7 @@ Contoh 2
 Masukan : 30000  Keluaran : 28500  
 
 Pseudocode:
-
+Program hitungDiskon
 Declaration
 harga : real
 

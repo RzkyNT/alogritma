@@ -75,7 +75,7 @@ Algorithm
 
 #include <stdio.h>
 
-int main(void) {
+int main() {
     // Declaration
     float x1, y1, x2, y2, xt, yt;
 
@@ -88,9 +88,7 @@ int main(void) {
     xt = (x1 + x2) / 2;
     yt = (y1 + y2) / 2;
 
-    printf("Titik tengah : (%.2f X, %.2f Y)\n", xt, yt);
-
-    return 0;
+    printf("Titik tengah : (%.2f, %.2f)\n", xt, yt);
 }
 
 /*

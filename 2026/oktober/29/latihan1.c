@@ -67,9 +67,10 @@ Algorithm
 int main(void) {
     // Declaration
     int k;
+    int i=1;
     // Algorithm
     scanf("%d", &k);
-    for (int i=1;i<=k;i++) {
+    for (;i<=k;i++) {
         printf("Anak Bebek Ke-%d\n", i);
     }
 }

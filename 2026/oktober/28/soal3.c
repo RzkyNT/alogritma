@@ -102,7 +102,7 @@ int main() {
     scanf("%f", &jumlah_ayam);
     harga_diskon = 0;
     total_biaya = jumlah_ayam * harga;
-    if (jumlah_ayam >= 10) {
+    if (jumlah_ayam >=5) {
     harga_diskon = (total_biaya * 0.1); 
     }
     printf("\n\n[Struk Pembelian]\n");

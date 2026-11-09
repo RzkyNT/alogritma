@@ -61,19 +61,21 @@ Declaration
 
 Algorithm
 
-*/// ![image-comment](.image-comment/image-20261029-084551-m7og8r.png)
+*/
 #include <stdio.h>
+
 int main(void) {
     // Declaration
-    int a;
+    int i;
+    int x;
+    int fx = 0;
     // Algorithm
-    printf("Masukkan angka: ");
-    scanf("%d", &a);
-    while(a<0) {
-        printf("Angka tidak valid!, masukan angka baru : ");
-        scanf("%d", &a);
+    scanf("%d", &x);
+    for (i = 1; i <= x; i++) {
+        fx = fx + 2*i;
     }
-    printf("\nTerimakasih");
+    printf("\nnilai f(x) = %d\n", fx);
+    return 0;
 }
 
 /*Output:

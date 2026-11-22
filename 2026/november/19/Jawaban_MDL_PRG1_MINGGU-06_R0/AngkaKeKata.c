@@ -40,18 +40,14 @@ ALGORITMA:
     else call tampilkanTerbilang(angka)
 */
 #include <stdio.h>
-
 void cetakKata(char kata[], int *adaKata);
 void cetakTigaDigit(int n, int *adaKata);
 void tampilkanTerbilang(int angka);
-
 int main(void)
 {
     int angka;
-
     printf("Masukkan bilangan bulat positif = ");
     scanf("%d", &angka);
-
     if (angka <= 0)
         printf("Bilangan harus positif\n");
     else
@@ -60,10 +56,8 @@ int main(void)
         tampilkanTerbilang(angka);
         printf("\n");
     }
-
     return 0;
 }
-
 void cetakKata(char kata[], int *adaKata)
 {
     if (*adaKata)
@@ -72,14 +66,12 @@ void cetakKata(char kata[], int *adaKata)
     printf("%s", kata);
     *adaKata = 1;
 }
-
 void cetakTigaDigit(int n, int *adaKata)
 {
     char *satuan[] = {
         "", "satu", "dua", "tiga", "empat",
         "lima", "enam", "tujuh", "delapan", "sembilan"
     };
-
     if (n >= 100)
     {
         if (n / 100 == 1)
@@ -91,7 +83,6 @@ void cetakTigaDigit(int n, int *adaKata)
         }
         n = n % 100;
     }
-
     if (n == 10)
         cetakKata("sepuluh", adaKata);
     else if (n == 11)
@@ -111,7 +102,6 @@ void cetakTigaDigit(int n, int *adaKata)
     else if (n > 0)
         cetakKata(satuan[n], adaKata);
 }
-
 void tampilkanTerbilang(int angka)
 {
     int kelompok[4];

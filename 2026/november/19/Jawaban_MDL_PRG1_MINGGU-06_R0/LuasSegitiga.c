@@ -14,23 +14,18 @@ ALGORITMA:
     write luas
 */
 #include <stdio.h>
-
 void HitungLuasSegitiga(float alas, float tinggi, float *luas);
-
 int main(void)
 {
     float alas;
     float tinggi;
     float luas;
-
     printf("Alas segitiga = ");
     scanf("%f", &alas);
     printf("Tinggi segitiga = ");
     scanf("%f", &tinggi);
-
     HitungLuasSegitiga(alas, tinggi, &luas);
     printf("Luas segitiga = %.2f\n", luas);
-
     return 0;
 }
 

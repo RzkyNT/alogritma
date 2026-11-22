@@ -17,26 +17,20 @@ ALGORITMA:
     write hasil
 */
 #include <stdio.h>
-
 int Max(int bilangan1, int bilangan2);
-
 int main(void)
 {
     int bilangan1;
     int bilangan2;
     int hasil;
-
     printf("Bilangan 1 = ");
     scanf("%d", &bilangan1);
     printf("Bilangan 2 = ");
     scanf("%d", &bilangan2);
-
     hasil = Max(bilangan1, bilangan2);
     printf("Nilai terbesar = %d\n", hasil);
-
     return 0;
 }
-
 int Max(int bilangan1, int bilangan2)
 {
     if (bilangan1 >= bilangan2)

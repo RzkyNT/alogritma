@@ -7,6 +7,14 @@ DEKLARASI:
     P1, P2 : Titik
     hasil : real
 
+function akarKuadrat(bilangan : real) -> real
+    if bilangan = 0 then
+        return 0
+    perkiraanAkar <- bilangan / 2
+    repeat 20 times
+        perkiraanAkar <- (perkiraanAkar + bilangan / perkiraanAkar) / 2
+    return perkiraanAkar
+
 function jarak(P1, P2 : Titik) -> real
     dx <- P1.x - P2.x
     dy <- P1.y - P2.y
@@ -18,7 +26,6 @@ ALGORITMA:
     write hasil
 */
 #include <stdio.h>
-
 typedef struct
 {
     float x;
@@ -51,18 +58,17 @@ float jarak(Titik P1, Titik P2)
 }
 float akarKuadrat(float bilangan)
 {
-    float tebakan;
+    float perkiraanAkar;
     int i;
 
     if (bilangan == 0)
     {
         return 0;
     }
-
-    tebakan = bilangan / 2;
+    perkiraanAkar = bilangan / 2;
     for (i = 0; i < 20; i++)
     {
-        tebakan = (tebakan + bilangan / tebakan) / 2;
+        perkiraanAkar = (perkiraanAkar + bilangan / perkiraanAkar) / 2;
     }
-    return tebakan;
+    return perkiraanAkar;
 }

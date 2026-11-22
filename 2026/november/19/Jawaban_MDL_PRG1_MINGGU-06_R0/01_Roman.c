@@ -24,17 +24,13 @@ ALGORITMA:
     write roman(n)
 */
 #include <stdio.h>
-
 char *roman(int n);
-
 int main(void)
 {
     int n;
-
     printf("Masukkan angka (1..10) = ");
     scanf("%d", &n);
     printf("Angka Romawi = %s\n", roman(n));
-
     return 0;
 }
 

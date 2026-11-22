@@ -4,87 +4,89 @@ Program MenentukanHariBesok
 
 DEKLARASI:
     hariSekarang : string
-    hariEsok : string
 
-PROCEDURE hariBesok(hariSekarang, hariEsok)
-    if hariSekarang = "senin" then hariEsok <- "selasa"
-    else if hariSekarang = "selasa" then hariEsok <- "rabu"
-    else if hariSekarang = "rabu" then hariEsok <- "kamis"
-    else if hariSekarang = "kamis" then hariEsok <- "jumat"
-    else if hariSekarang = "jumat" then hariEsok <- "sabtu"
-    else if hariSekarang = "sabtu" then hariEsok <- "minggu"
-    else if hariSekarang = "minggu" then hariEsok <- "senin"
-    else hariEsok <- "Input tidak valid"
+PROCEDURE hariBesok(hariSekarang)
+    if hariSekarang = "senin" then print "selasa"
+    else if hariSekarang = "selasa" then print "rabu"
+    else if hariSekarang = "rabu" then print "kamis"
+    else if hariSekarang = "kamis" then print "jumat"
+    else if hariSekarang = "jumat" then print "sabtu"
+    else if hariSekarang = "sabtu" then print "minggu"
+    else if hariSekarang = "minggu" then print "senin"
+    else print "Input tidak valid"
 
 ALGORITMA:
     read hariSekarang
-    call hariBesok(hariSekarang, hariEsok)
-    write hariEsok
+    call hariBesok(hariSekarang)
 */
 #include <stdio.h>
-void salinNama(char asal[], char tujuan[]);
-int samaNama(char a[], char b[]);
-void hariBesok(char hariSekarang[], char hariEsok[]);
+
+void hariBesok(char hariSekarang[]);
 
 int main(void)
 {
     char hariSekarang[20];
-    char hariEsok[30];
 
     printf("Masukkan nama hari sekarang (huruf kecil) = ");
     scanf("%19s", hariSekarang);
 
-    hariBesok(hariSekarang, hariEsok);
-    printf("Hari besok adalah %s\n", hariEsok);
+    hariBesok(hariSekarang);
 
     return 0;
 }
 
-void salinNama(char asal[], char tujuan[])
+void hariBesok(char hariSekarang[])
 {
-    int i = 0;
-
-    while (asal[i] != '\0')
-    {
-        tujuan[i] = asal[i];
-        i++;
-    }
-    tujuan[i] = '\0';
-}
-
-int samaNama(char a[], char b[])
-{
-    int i = 0;
-
-    while (a[i] != '\0' && b[i] != '\0')
-    {
-        if (a[i] != b[i])
-            return 0;
-        i++;
-    }
-
-    if (a[i] == '\0' && b[i] == '\0')
-        return 1;
+    if (hariSekarang[0] == 's' &&
+        hariSekarang[1] == 'e' &&
+        hariSekarang[2] == 'n' &&
+        hariSekarang[3] == 'i' &&
+        hariSekarang[4] == 'n' &&
+        hariSekarang[5] == '\0')
+        printf("Hari besok adalah selasa\n");
+    else if (hariSekarang[0] == 's' &&
+             hariSekarang[1] == 'e' &&
+             hariSekarang[2] == 'l' &&
+             hariSekarang[3] == 'a' &&
+             hariSekarang[4] == 's' &&
+             hariSekarang[5] == 'a' &&
+             hariSekarang[6] == '\0')
+        printf("Hari besok adalah rabu\n");
+    else if (hariSekarang[0] == 'r' &&
+             hariSekarang[1] == 'a' &&
+             hariSekarang[2] == 'b' &&
+             hariSekarang[3] == 'u' &&
+             hariSekarang[4] == '\0')
+        printf("Hari besok adalah kamis\n");
+    else if (hariSekarang[0] == 'k' &&
+             hariSekarang[1] == 'a' &&
+             hariSekarang[2] == 'm' &&
+             hariSekarang[3] == 'i' &&
+             hariSekarang[4] == 's' &&
+             hariSekarang[5] == '\0')
+        printf("Hari besok adalah jumat\n");
+    else if (hariSekarang[0] == 'j' &&
+             hariSekarang[1] == 'u' &&
+             hariSekarang[2] == 'm' &&
+             hariSekarang[3] == 'a' &&
+             hariSekarang[4] == 't' &&
+             hariSekarang[5] == '\0')
+        printf("Hari besok adalah sabtu\n");
+    else if (hariSekarang[0] == 's' &&
+             hariSekarang[1] == 'a' &&
+             hariSekarang[2] == 'b' &&
+             hariSekarang[3] == 't' &&
+             hariSekarang[4] == 'u' &&
+             hariSekarang[5] == '\0')
+        printf("Hari besok adalah minggu\n");
+    else if (hariSekarang[0] == 'm' &&
+             hariSekarang[1] == 'i' &&
+             hariSekarang[2] == 'n' &&
+             hariSekarang[3] == 'g' &&
+             hariSekarang[4] == 'g' &&
+             hariSekarang[5] == 'u' &&
+             hariSekarang[6] == '\0')
+        printf("Hari besok adalah senin\n");
     else
-        return 0;
-}
-
-void hariBesok(char hariSekarang[], char hariEsok[])
-{
-    if (samaNama(hariSekarang, "senin"))
-        salinNama("selasa", hariEsok);
-    else if (samaNama(hariSekarang, "selasa"))
-        salinNama("rabu", hariEsok);
-    else if (samaNama(hariSekarang, "rabu"))
-        salinNama("kamis", hariEsok);
-    else if (samaNama(hariSekarang, "kamis"))
-        salinNama("jumat", hariEsok);
-    else if (samaNama(hariSekarang, "jumat"))
-        salinNama("sabtu", hariEsok);
-    else if (samaNama(hariSekarang, "sabtu"))
-        salinNama("minggu", hariEsok);
-    else if (samaNama(hariSekarang, "minggu"))
-        salinNama("senin", hariEsok);
-    else
-        salinNama("Input tidak valid", hariEsok);
+        printf("Input tidak valid\n");
 }

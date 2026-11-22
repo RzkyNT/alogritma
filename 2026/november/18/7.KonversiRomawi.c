@@ -1,39 +1,56 @@
 /*
-function roman(angka : integer) -> string
-{ menerima angka desimal (1..10) dan mengembalikan angka romawinya }
+Pseudocode:
+PROGRAM RomanMainProgram
+{ Program untuk mengonversi angka 1 sampai 10
+  menjadi angka Romawi menggunakan function }
 
-DEKLARASI:
-    { tidak ada }
+DECLARATION:
+    n : integer
 
-ALGORITMA:
-    depend on (angka)
-        1  : return "I"
-        2  : return "II"
-        3  : return "III"
-        4  : return "IV"
-        5  : return "V"
-        6  : return "VI"
-        7  : return "VII"
-        8  : return "VIII"
-        9  : return "IX"
-        10 : return "X"
-        otherwise : return "Angka di luar jangkauan"
-    end depend
+    FUNCTION Roman(angka : integer) → string
+    { Mengembalikan angka Romawi berdasarkan
+      angka yang diterima }
+
+    DECLARATION:
+        { none }
+
+    ALGORITHM:
+        switch (angka)
+            case 1:
+                return "I"
+            case 2:
+                return "II"
+            case 3:
+                return "III"
+            case 4:
+                return "IV"
+            case 5:
+                return "V"
+            case 6:
+                return "VI"
+            case 7:
+                return "VII"
+            case 8:
+                return "VIII"
+            case 9:
+                return "IX"
+            case 10:
+                return "X"
+            default:
+                return "Angka di luar jangkauan"
+        endswitch
+
+ALGORITHM:
+    write("Masukkan angka (1..10) = ")
+    read(n)
+
+    write("Angka Romawi = ", Roman(n))
 */
-
-/* PROGRAM KonversiRomawi */
-/* Program utama untuk mengubah angka desimal 1..10 ke angka Romawi */
-
 #include <stdio.h>
-
-/* Deklarasi purwarupa fungsi */
-const char* roman(int angka);
+char* roman(int angka);
 
 int main() {
-    /* DEKLARASI */
     int n;
-
-    /* ALGORITMA */
     printf("Masukkan angka (1..10) = ");
     scanf("%d", &n);
 
@@ -42,13 +59,8 @@ int main() {
     return 0;
 }
 
-const char* roman(int angka) {
-/* menerima angka desimal (1..10) dan mengembalikan angka romawinya */
-    /* DEKLARASI */
-    /* tidak ada */
-
-    /* ALGORITMA */
-    switch (angka) {
+char* roman(int angka) {
+        switch (angka) {
         case 1:  return "I";
         case 2:  return "II";
         case 3:  return "III";

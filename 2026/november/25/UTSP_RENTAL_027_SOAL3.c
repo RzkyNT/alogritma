@@ -16,10 +16,8 @@ int main(void) {
     printf("[4] Harga sewa total = harga sewa + pajak 11%%\n\n\n");
     printf("[INPUT DATA SEWA]\n");
     printf("Berapa Jumlah Mobil? : ");
-    if (scanf("%d", &jumlahMobil) != 1 || jumlahMobil < 1) {
-        printf("Jumlah mobil harus berupa angka minimal 1.\n");
-        return 1;
-    }
+    scanf("%d", &jumlahMobil);
+    
     for (int i = 1; i <= jumlahMobil; i++) {
         printf("\n----------------------------\n");
         printf("[Data Mobil-%d]\n", i);

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "conio.h"
 
 int totalSupir(int hari);
 
@@ -33,13 +34,13 @@ int main(void) {
 
         switch (jenisMobil) {
             case 1:
-                hargaSewaHarian = 500000.0f;
+                hargaSewaHarian = 500000.0;
                 break;
             case 2:
-                hargaSewaHarian = 600000.0f;
+                hargaSewaHarian = 600000.0;
                 break;
             case 3:
-                hargaSewaHarian = 1000000.0f;
+                hargaSewaHarian = 1000000.0;
                 break;
             default:
                 printf("Jenis mobil tidak valid.\n");
@@ -73,21 +74,18 @@ int main(void) {
     printf("----------------------------------------------------\n");
 
     return 0;
+    getch();
 }
 
 int totalSupir(int hari) {
     char supir;
     for (;;) {
         printf("SUPIR? (Y/N) : ");
-        if (scanf(" %c", &supir) != 1) {
-            return -1;
-        }
-        if (supir == 'Y' || supir == 'y') {
-            return 200000 * hari;
-        }
-        if (supir == 'N' || supir == 'n') {
+        scanf(" %c", &supir);
+        if (supir == 'Y') {
+             return 200000 * hari;
+        } else if (supir == 'N') {
             return 0;
         }
-        printf("Pilihan tidak valid. Masukkan Y atau N.\n");
     }
-}
+ }

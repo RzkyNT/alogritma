@@ -14,14 +14,12 @@ int main(void) {
     printf("[2] Harga sewa merupakan harga sewa harian\n");
     printf("[3] 1. Avanza Rp. 500000, 2. Innova Rp. 600000, 3. Hiace Rp. 1000000\n");
     printf("[4] Harga sewa total = harga sewa + pajak 11%%\n\n\n");
-
     printf("[INPUT DATA SEWA]\n");
     printf("Berapa Jumlah Mobil? : ");
     if (scanf("%d", &jumlahMobil) != 1 || jumlahMobil < 1) {
         printf("Jumlah mobil harus berupa angka minimal 1.\n");
         return 1;
     }
-
     for (int i = 1; i <= jumlahMobil; i++) {
         printf("\n----------------------------\n");
         printf("[Data Mobil-%d]\n", i);
@@ -46,7 +44,6 @@ int main(void) {
         totalSewa += hargaSewaHarian * hari;
         totalHari += hari;
     }
-
     totalPajak = totalSewa * 0.11f;
     totalBayar = totalSewa + totalPajak;
 
@@ -59,11 +56,5 @@ int main(void) {
     printf("[5] Total Bayar                      = Rp. %.2f\n", totalBayar);
     printf("----------------------------------------------------\n");
     getch();
-
-    
     return 0;
 }
-
-/*Output:
-
-*/

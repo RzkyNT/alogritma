@@ -2,10 +2,9 @@
 #include "conio.h"
 
 int main(void) {
-    // Declaration
-    int bil,inputbil;
 
-    // Algorithm
+    int bil,inputbil;
+    
     scanf("%d", &inputbil);
     for (bil = 9; bil >= 1; bil--) {
         if (inputbil == bil) {

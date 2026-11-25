@@ -17,11 +17,9 @@ int main(void) {
     printf("[4] Harga Supir Rp. 200.000 / Hari\n");
     printf("[5] Harga sewa = Harga Sewa Harian * Jumlah Hari\n");
     printf("[6] Harga sewa total = Harga Sewa + Pajak 11%%\n\n\n");
-
     printf("[INPUT DATA SEWA]\n");
     printf("Berapa Jumlah Mobil? : ");
     scanf("%d", &jmlmbl);
-
     for (int i = 1; i <= jmlmbl; i++) {
         printf("\n----------------------------\n");
         printf("[Data Mobil-%d]\n", i);
@@ -29,7 +27,6 @@ int main(void) {
         scanf("%d", &jenismbl);
         printf("Jumlah Hari                 : ");
         scanf("%d", &hari);
-
         switch (jenismbl) {
             case 1:
                 hargasw = 500000.0;
@@ -44,12 +41,10 @@ int main(void) {
                 printf("Jenis mobil tidak valid.\n");
                 return 1;
         }
-
         totalsewa += hargasw * hari;
         totalhari += hari;
         totalsupir += totalSupir(hari);
     }
-
     totalbiaya = totalsewa + totalsupir;
     totalpajak = totalbiaya * 0.11f;
     totalbayar = totalbiaya + totalpajak;

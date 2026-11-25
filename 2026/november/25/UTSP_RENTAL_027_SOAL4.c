@@ -25,9 +25,9 @@ int main(void) {
     for (int i = 1; i <= jumlahMobil; i++) {
         printf("\n----------------------------\n");
         printf("[Data Mobil-%d]\n", i);
-        printf("Jenis Mobil[1-3] : ");
+        printf("Jenis Mobil[1-3]            : ");
         scanf("%d", &jenisMobil);
-        printf("Jumlah Hari     : ");
+        printf("Jumlah Hari                 : ");
         scanf("%d", &hari);
 
         switch (jenisMobil) {
@@ -66,13 +66,13 @@ int main(void) {
     printf("[7] Pajak 11%%                        = Rp. %.2f\n", totalPajak);
     printf("[8] Total Bayar                      = Rp. %.2f\n", totalBayar);
     printf("----------------------------------------------------\n");
-
+    getch();
     return 0;
 }
 
 int totalSupir(int hari) {
     char supir;
-    printf("SUPIR? (Y/N) : ");
+    printf("SUPIR? (Y/N)                : ");
     if (scanf(" %c", &supir) != 1) {
         return -1;
     }

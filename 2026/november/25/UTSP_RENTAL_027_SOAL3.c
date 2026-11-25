@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 int main(void) {
-    double hargasw, totalbayar, totalpajak, totalhari, totalsupir;
+    float hargasw, totalbayar, totalpajak, totalhari, totalsupir;
     int hari, jenismbl, jmlmbl;
-    char supir;
+    char supir[2];
 
     printf("                     [Astrac Rent Car-ARC]\n\n");
     printf("[Program Sewa Mobil]\n");
@@ -15,14 +15,11 @@ int main(void) {
     printf("[6] Harga sewa total = Harga Sewa + Pajak 11%%\n\n\n");
 
     printf("[INPUT DATA SEWA]\n");
-    printf("Jumlah Mobil?    : ");
-    if (scanf("%d", &jmlmbl) ) {
-        printf("Jumlah mobil harus berupa angka minimal 1.\n");
-        return 1;
-    }
-
+    printf("Berapa Jumlah Mobil?    : ");
+    scanf("%d", &jmlmbl);
     for (int i = 1; i <= jmlmbl; i++) {
-        printf("[Data Mobil ke-%d]\n", i);
+        printf("----------------------------\n");
+        printf("[Data Mobil-%d]\n", i);
         printf("Jenis Mobil[1-3] : ");
         if (scanf("%d", &jenismbl) != 1) {
             printf("Jenis mobil tidak valid.\n");
@@ -45,17 +42,16 @@ int main(void) {
         }
 
         printf("Jumlah Hari      : ");
-        if (scanf("%d", &hari) != 1 || hari < 1) {
-            printf("Jumlah hari harus berupa angka minimal 1.\n");
-            return 1;
-        }
+        scanf("%d", &hari);
 
-        printf("Supir? (y/n)     : ");
-        if (scanf(" %c", &supir) != 1 ||
-            (supir != 'y' && supir != 'Y' && supir != 'n' && supir != 'N')) {
-            printf("Pilihan supir harus y atau n.\n");
-            return 1;
+        printf("Supir? (Y/N)     : ");
+        scanf(" %c", &supir);
+        if (supir == 'Y') {
+            totalsupir = 200000.0 * hari;
+        } else {
+            totalsupir = 0.0;
         }
+    }
 
         totalhari = hargasw * hari;
         totalsupir = (supir == 'y' || supir == 'Y') ? 200000.0 * hari : 0.0;
@@ -74,5 +70,3 @@ int main(void) {
         printf("----------------------------------------------------\n");
     }
 
-    return 0;
-}

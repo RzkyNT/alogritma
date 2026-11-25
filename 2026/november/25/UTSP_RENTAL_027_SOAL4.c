@@ -6,8 +6,6 @@ int totalSupir(int hari);
 int main(void) {
     float hargaSewaHarian, totalBayar, totalPajak, totalSewa, totalBiayaSupir, totalBiaya;
     int hari, jenisMobil, jumlahMobil, totalHari = 0;
-    totalBayar = 0.0f;
-    totalPajak = 0.0f;
     totalSewa = 0.0f;
     totalBiayaSupir = 0.0f;
 
@@ -50,10 +48,6 @@ int main(void) {
         totalSewa += hargaSewaHarian * hari;
         totalHari += hari;
         int biayaSupirMobil = totalSupir(hari);
-        if (biayaSupirMobil < 0) {
-            printf("Input sopir gagal dibaca.\n");
-            return 1;
-        }
         totalBiayaSupir += biayaSupirMobil;
     }
 
@@ -63,7 +57,7 @@ int main(void) {
 
     printf("\n----------------------------------------------------\n");
     printf("                     [Invoice]\n\n");
-    printf("[1] Jenis Mobil                     = %d\n", jenisMobil);
+    printf("[1] Jenis Mobil                      = %d\n", jenisMobil);
     printf("[2] Jumlah Mobil                     = %d\n", jumlahMobil);
     printf("[3] Jumlah Hari                      = %d\n", totalHari);
     printf("[4] Total Sewa                       = Rp. %.2f\n", totalSewa);
@@ -74,18 +68,19 @@ int main(void) {
     printf("----------------------------------------------------\n");
 
     return 0;
-    getch();
 }
 
 int totalSupir(int hari) {
     char supir;
-    for (;;) {
-        printf("SUPIR? (Y/N) : ");
-        scanf(" %c", &supir);
-        if (supir == 'Y') {
-             return 200000 * hari;
-        } else if (supir == 'N') {
-            return 0;
-        }
+    printf("SUPIR? (Y/N) : ");
+    if (scanf(" %c", &supir) != 1) {
+        return -1;
     }
- }
+    if (supir == 'Y' || supir == 'y') {
+        return 200000 * hari;
+    }
+    if (supir == 'N' || supir == 'n') {
+        return 0;
+    }
+    return -1;
+}

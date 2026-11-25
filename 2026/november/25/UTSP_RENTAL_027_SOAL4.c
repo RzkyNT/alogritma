@@ -4,10 +4,10 @@
 int totalSupir(int hari);
 
 int main(void) {
-    float hargaSewaHarian, totalBayar, totalPajak, totalSewa, totalBiayaSupir, totalBiaya;
-    int hari, jenisMobil, jumlahMobil, totalHari = 0;
-    totalSewa = 0.0f;
-    totalBiayaSupir = 0.0f;
+    float hargasw, totalbayar, totalpajak, totalsewa, totalsupir, totalbiaya;
+    int hari, jenismbl, jmlmbl, totalhari = 0;
+    totalsewa = 0.0f;
+    totalsupir = 0.0f;
 
     printf("                     [Astrac Rent Car-ARC]\n\n");
     printf("[Program Sewa Mobil]\n");
@@ -20,51 +20,50 @@ int main(void) {
 
     printf("[INPUT DATA SEWA]\n");
     printf("Berapa Jumlah Mobil? : ");
-    scanf("%d", &jumlahMobil);
+    scanf("%d", &jmlmbl);
 
-    for (int i = 1; i <= jumlahMobil; i++) {
+    for (int i = 1; i <= jmlmbl; i++) {
         printf("\n----------------------------\n");
         printf("[Data Mobil-%d]\n", i);
         printf("Jenis Mobil[1-3]            : ");
-        scanf("%d", &jenisMobil);
+        scanf("%d", &jenismbl);
         printf("Jumlah Hari                 : ");
         scanf("%d", &hari);
 
-        switch (jenisMobil) {
+        switch (jenismbl) {
             case 1:
-                hargaSewaHarian = 500000.0;
+                hargasw = 500000.0;
                 break;
             case 2:
-                hargaSewaHarian = 600000.0;
+                hargasw = 600000.0;
                 break;
             case 3:
-                hargaSewaHarian = 1000000.0;
+                hargasw = 1000000.0;
                 break;
             default:
                 printf("Jenis mobil tidak valid.\n");
                 return 1;
         }
 
-        totalSewa += hargaSewaHarian * hari;
-        totalHari += hari;
-        int biayaSupirMobil = totalSupir(hari);
-        totalBiayaSupir += biayaSupirMobil;
+        totalsewa += hargasw * hari;
+        totalhari += hari;
+        totalsupir += totalSupir(hari);
     }
 
-    totalBiaya = totalSewa + totalBiayaSupir;
-    totalPajak = totalBiaya * 0.11f;
-    totalBayar = totalBiaya + totalPajak;
+    totalbiaya = totalsewa + totalsupir;
+    totalpajak = totalbiaya * 0.11f;
+    totalbayar = totalbiaya + totalpajak;
 
     printf("\n----------------------------------------------------\n");
     printf("                     [Invoice]\n\n");
-    printf("[1] Jenis Mobil                      = %d\n", jenisMobil);
-    printf("[2] Jumlah Mobil                     = %d\n", jumlahMobil);
-    printf("[3] Jumlah Hari                      = %d\n", totalHari);
-    printf("[4] Total Sewa                       = Rp. %.2f\n", totalSewa);
-    printf("[5] Total Supir                      = Rp. %.2f\n", totalBiayaSupir);
-    printf("[6] Total Seluruh Biaya              = Rp. %.2f\n", totalBiaya);
-    printf("[7] Pajak 11%%                        = Rp. %.2f\n", totalPajak);
-    printf("[8] Total Bayar                      = Rp. %.2f\n", totalBayar);
+    printf("[1] Jenis Mobil                      = %d\n", jenismbl);
+    printf("[2] Jumlah Mobil                     = %d\n", jmlmbl);
+    printf("[3] Jumlah Hari                      = %d\n", totalhari);
+    printf("[4] Total Sewa                       = Rp. %.2f\n", totalsewa);
+    printf("[5] Total Supir                      = Rp. %.2f\n", totalsupir);
+    printf("[6] Total Seluruh Biaya              = Rp. %.2f\n", totalbiaya);
+    printf("[7] Pajak 11%%                        = Rp. %.2f\n", totalpajak);
+    printf("[8] Total Bayar                      = Rp. %.2f\n", totalbayar);
     printf("----------------------------------------------------\n");
     getch();
     return 0;

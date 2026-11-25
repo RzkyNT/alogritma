@@ -73,14 +73,11 @@ int main(void) {
 int totalSupir(int hari) {
     char supir;
     printf("SUPIR? (Y/N)                : ");
-    if (scanf(" %c", &supir) != 1) {
-        return -1;
-    }
+    scanf(" %c", &supir);
     if (supir == 'Y' || supir == 'y') {
         return 200000 * hari;
     }
     if (supir == 'N' || supir == 'n') {
         return 0;
     }
-    return -1;
 }

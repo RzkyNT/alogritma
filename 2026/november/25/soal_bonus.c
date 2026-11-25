@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "conio.h"
 
 int main(void) {
     // Declaration
@@ -13,6 +14,6 @@ int main(void) {
             printf("....%d....\n", bil);
         }
     }
-
+    getch();
     return 0;
 }
